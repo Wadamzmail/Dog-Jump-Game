@@ -45,7 +45,8 @@ android {
 dependencies{
         implementation 'androidx.core:core:1.13.1'
 		implementation "com.esotericsoftware:kryonet:2.22.0-RC1"
-        implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+         implementation fileTree(dir: 'libs', include: ['*.aar'])
 }
 
 
