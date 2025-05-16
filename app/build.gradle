@@ -1,0 +1,51 @@
+
+plugins {
+    id 'com.android.application'
+    
+}
+
+android {
+    namespace 'dev.mutwakil.dogjump'
+    compileSdk 34
+    
+    defaultConfig {
+        applicationId "dev.mutwakil.dogjump"
+        minSdk 21
+        targetSdk 34
+        versionCode 102
+        versionName "1.0.2-alpha"
+        multiDexEnabled true
+        
+        vectorDrawables { 
+            useSupportLibrary false
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        viewBinding false
+        dataBinding false
+    }
+    
+    
+}
+dependencies{
+        implementation 'androidx.core:core:1.13.1'
+		implementation "com.esotericsoftware:kryonet:2.22.0-RC1"
+        implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+}
+
+

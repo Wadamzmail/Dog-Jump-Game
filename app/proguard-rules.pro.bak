@@ -1,0 +1,66 @@
+# Add project specific ProGuard rules here.
+# You can control the set of applied configuration files using the
+# proguardFiles setting in build.gradle.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+# Uncomment this to preserve the line number information for
+# debugging stack traces.
+#-keepattributes SourceFile,LineNumberTable
+
+# If you keep the line number information, uncomment this to
+# hide the original source file name.
+#-renamesourcefileattribute SourceFile
+#-keep class androidx.emoji2.text.** { *; }
+#-keep class androidx.emoji2.text.flatbuffer.** { *; }
+-dontwarn java.lang.System$Logger$Level
+-dontwarn java.lang.System$Logger
+# احتفظ بكل كود libGDX
+-keep class com.badlogic.gdx.** { *; }
+
+# احتفظ بكلاسات Launcher
+-keep class dev.mutwakil.dogjump.game.Dj { *; }
+-keep class dev.mutwakil.dogjump.MainActivity{ *; }
+-keep class dev.mutwakil.dogjump.util.Utils { *; }
+-keep class dev.mutwakil.dogjump.res.** { *; }
+-keep class dev.mutwakil.dogjump.model.** { *; }
+
+# احتفظ بالكلاسات اللي تُستخدم في AndroidApplication
+-keep class ** extends com.badlogic.gdx.Game
+-keep class ** extends com.badlogic.gdx.ApplicationListener
+
+# اختياري: احتفظ بكلاسات أدوات التوسعة إن كنت مستخدم أي إضافات
+-keep class com.badlogic.gdx.backends.android.** { *; }
+-keep class com.badlogic.gdx.** { *; }
+-keep class com.kotcrab.vis.** { *; }
+-keep class com.kotcrab.vis.ui.widget.** { *; }
+-keep class com.badlogic.gdx.utils.SharedLibraryLoader { *; }
+-keep class com.badlogic.gdx.utils.GdxNativesLoader { *; }
+-keep class com.badlogic.gdx.ai.** { *; }
+-keep class com.badlogic.ashley.** { *; }
+-keep class box2dLight.** { *; }
+-keep class com.badlogic.gdx.physics.box2d.** { *; }
+-keep class com.github.javaparser.** { *; }
+-keep class com.bfo.zeroconf.** { *; }
+-keep class com.esotericsoftware.kryonet.** { *; }
+
+-dontwarn com.github.javaparser.JavaParser
+-dontwarn com.github.javaparser.ParseResult
+-dontwarn com.github.javaparser.Position
+-dontwarn com.github.javaparser.ast.CompilationUnit
+-dontwarn com.github.javaparser.ast.NodeList
+-dontwarn com.github.javaparser.ast.body.BodyDeclaration
+-dontwarn com.github.javaparser.ast.body.ClassOrInterfaceDeclaration
+-dontwarn com.github.javaparser.ast.body.EnumDeclaration
+-dontwarn com.github.javaparser.ast.body.MethodDeclaration
+-dontwarn com.github.javaparser.ast.body.Parameter
+-dontwarn com.github.javaparser.ast.body.TypeDeclaration
+-dontwarn com.github.javaparser.ast.type.Type
